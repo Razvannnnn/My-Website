@@ -22,14 +22,14 @@ const StyledSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-slideIn pb-8 mx-h-64">
           {/* Card 1 */}
           <div className='gradient-border rounded-3xl bg-stone-950 shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-2'>
-            <div className="rounded-3xl bg-stone-950 max-h-max">  
+            <div className="rounded-3xl bg-gradient-to-b from-stone-950 to-black max-h-max">  
                 <Section1></Section1>
             </div>
           </div>
 
           {/* Card 2 */}
           <div className='gradient-border bg-stone-950 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300'>
-            <div className="bg-stone-950 rounded-3xl mx-auto">
+            <div className="bg-gradient-to-b from-stone-950 to-black rounded-3xl mx-auto">
                 <Section2></Section2>
             </div>
           </div>
@@ -37,7 +37,7 @@ const StyledSection = () => {
         
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-slideIn2 pb-8'>
             <div className='gradient-border rounded-3xl bg-stone-950 shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-3'>
-                <div className="rounded-3xl bg-stone-950 ">  
+                <div className="rounded-3xl bg-gradient-to-b from-stone-950 to-black ">  
                     <Section3></Section3>
                 </div>
             </div>
@@ -45,7 +45,7 @@ const StyledSection = () => {
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-slideIn2 pb-8'>
             <div className='gradient-border rounded-3xl bg-stone-950 shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-3'>
-                <div className="rounded-3xl bg-stone-950 ">  
+                <div className="bg-gradient-to-b from-stone-950 to-black rounded-3xl">  
                     <Section4></Section4>
                 </div>
             </div>

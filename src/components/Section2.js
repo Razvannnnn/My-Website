@@ -7,6 +7,7 @@ const Section2 = () => {
       {/* Content */}
       <div className="relative z-10 max-w-2xl">
         <img src={MyImage} alt='MyImage' className='h-64 animate-fadeIn'></img>
+        <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black to-transparent"></div>
       </div> 
     </section>
   );
