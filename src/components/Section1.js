@@ -3,14 +3,14 @@ import MyImage from '../images/IMG_1903.png'
 
 const Section1 = () => {
   return (
-    <section className="min-h-80 flex items-center justify-center  dark:from-gray-900 dark:to-gray-800 ">
+    <section className="min-h-80 flex items-center justify-center  dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-2xl py-4 w-full">
         {/* Flex Container for Name, Title, and Button */}
-            <div className="flex justify-between items-center mb-8">
+            <div className="flex justify-between items-center mb-8 px-3">
               {/* Name and Title Stacked Vertically */}
               <div className="flex items-center space-x-1">
                 <a>
-                  <img src={MyImage} className='h-20'></img>
+                  <img src={MyImage} className='h-20 w-20 object-cover'></img>
                 </a>
 
                 <div>
@@ -32,7 +32,7 @@ const Section1 = () => {
 
             {/* Description Below */}
         <div>
-          <p className="text-3xl text-gray-400 dark:text-gray-300 leading-relaxed mb-4">
+          <p className="text-3xl text-gray-400 dark:text-gray-300 leading-relaxed mb-4 px-3">
             Blending my skills in <span className="text-white font-bold">coding</span> and <span className="text-white font-bold">design</span> to build <span className="text-white font-bold">creative, 
                 impactful, and future-ready</span> solutions.
           </p>

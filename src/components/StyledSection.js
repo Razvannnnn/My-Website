@@ -6,7 +6,7 @@ import Section3 from './Section3';
 const StyledSection = () => {
   return (
     <section className="py-10 bg-transparent">
-      <div className="container mx-auto px-44">
+      <div className="container mx-auto px-6 max-w-6xl">
         {/* Section Title */}
         <h2 className="text-4xl font-bold text-center text-white mb-4 animate-fadeIn">
             Welcome to my <span className='bg-gradient-to-br from-sky-500 to-sky-200 text-transparent bg-clip-text'>Website </span>
