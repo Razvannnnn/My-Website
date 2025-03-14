@@ -17,7 +17,8 @@ module.exports = {
       slideIn2: 'slideIn2 1.5s ease-in-out',
       shimmer: "shimmer 2s linear infinite",
       text: 'text 5s ease infinite',
-      zoomIn: 'zoomIn 1s ease-in-out'
+      zoomIn: 'zoomIn 1s ease-in-out',
+      fadeInStars: 'fadeInStars 5s ease-in-out',
     },
     keyframes: {
       typewriter: {
@@ -43,6 +44,10 @@ module.exports = {
         },
       },
       fadeIn: {
+        '0%': { opacity: '0' },
+        '100%': { opacity: '1' },
+      },
+      fadeInStars: {
         '0%': { opacity: '0' },
         '100%': { opacity: '1' },
       },

@@ -19,7 +19,7 @@ const scrollToSection = (sectionId) => {
 
 const Section1 = () => {
   return (
-    <section id='section1' className="min-h-64 flex items-center justify-center dark:from-gray-900 dark:to-gray-800">
+    <section id='section1' className="min-h-72 flex items-center justify-center dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-2xl py-4 w-full">
         {/* Flex Container for Name, Title, and Button */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 px-3">
