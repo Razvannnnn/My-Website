@@ -2,14 +2,19 @@
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     animation: {
       typewriter: '1s typewriter 2s steps(14) forwards',
       caret: '1s typewriter 2s steps(14) forwards, blink 2s steps(14) infinite 2s',
       fadeIn: 'fadeIn 1.5s ease-in-out',
       slideIn: 'slideIn 1.5s ease-in-out',
-      slideIn2: 'slideIn2 1.5s ease-in-out'
+      slideIn2: 'slideIn2 1.5s ease-in-out',
+      shimmer: "shimmer 2s linear infinite",
     },
     keyframes: {
       typewriter: {
@@ -45,6 +50,14 @@ module.exports = {
       slideIn2: {
         '0%': { transform: 'translateY(+75%)', opacity: '0' },
         '100%': { transform: 'translateY(0)', opacity: '1' },
+      },
+      shimmer: {
+        from: {
+          backgroundPosition: "0 0",
+        },
+        to: {
+          backgroundPosition: "-200% 0",
+        },
       },
     },
     boxShadow: {

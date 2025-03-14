@@ -4,7 +4,6 @@ import Footer from './components/Footer';
 import StyledSection from './components/StyledSection';
 
 
-
 function App() {
   
   useEffect(() => {

@@ -3,7 +3,7 @@ import MyImage from '../images/IMG_1903.png'
 
 const Section1 = () => {
   return (
-    <section className="min-h-80 flex items-center justify-center dark:from-gray-900 dark:to-gray-800">
+    <section className="min-h-64 flex items-center justify-center dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-2xl py-4 w-full">
         {/* Flex Container for Name, Title, and Button */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 px-3">
@@ -22,17 +22,15 @@ const Section1 = () => {
               </h2>
             </div>
           </div>
-
-          {/* Contact Button */}
-          <a href="#contact"
-            className="px-8 py-3 bg-sky-500 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300 md:ml-4">
-            Contact me
-          </a>
-        </div>
-
-        {/* Description Below */}
-        <div>
-          <p className="text-3xl text-gray-400 dark:text-gray-300 leading-relaxed mb-4 px-3">
+            <a className='pr-6'>
+                <button className="hover:scale-110 inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-sky-500 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-transform duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-50">
+                Contact me
+                </button>
+              </a>
+          </div>
+          {/* Description Below */}
+          <div>
+          <p className="text-2xl text-gray-400 dark:text-gray-300 leading-relaxed mb-4 px-3">
             Blending my skills in <span className="text-white font-bold">coding</span> and <span className="text-white font-bold">design</span> to build <span className="text-white font-bold">creative, 
                 impactful, and future-ready</span> solutions.
           </p>
