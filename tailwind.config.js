@@ -5,6 +5,7 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/flyonui/dist/js/*.js"
   ],
   darkMode: 'class',
   theme: {
@@ -15,6 +16,8 @@ module.exports = {
       slideIn: 'slideIn 1.5s ease-in-out',
       slideIn2: 'slideIn2 1.5s ease-in-out',
       shimmer: "shimmer 2s linear infinite",
+      text: 'text 5s ease infinite',
+      zoomIn: 'zoomIn 1s ease-in-out'
     },
     keyframes: {
       typewriter: {
@@ -59,6 +62,17 @@ module.exports = {
           backgroundPosition: "-200% 0",
         },
       },
+      text: {
+        '0%, 100%': {'background-size':'200% 200%',
+                  'background-position': 'left center'},
+        '50%': {'background-size':'200% 200%',
+                'background-position': 'right center'}
+      },
+      zoomIn: {
+        '0%': { transform: 'scale(1)'},
+        '50%': { transform: 'scale(1.05)'},
+        '100%': { transform: 'scale(1)'}
+      }
     },
     boxShadow: {
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
@@ -67,7 +81,10 @@ module.exports = {
       'inner-xl': 'inset 20px 20px 20px 20px rgba(0, 0, 0, 0.16)',
     },
   },
-  plugins: [],
+  plugins: [
+    require("flyonui"),
+    require("flyonui/plugin")
+  ],
   darkMode: 'class'
 }
 

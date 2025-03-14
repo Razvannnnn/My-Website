@@ -1,10 +1,19 @@
 import React from 'react';
 import MyImage from '../images/IMG_1903.png'
+import { section } from 'framer-motion/client';
 
 const scrollToSection = (sectionId) => {
   const section = document.getElementById(sectionId);
   if(section) {
     section.scrollIntoView({behavior: 'smooth'})
+  
+    setTimeout(() => {
+      section.classList.add('animate-zoomIn');
+
+      setTimeout(() => {
+        section.classList.remove('animate-zoomIn');
+      }, 1000);
+    }, 400)
   }
 }
 

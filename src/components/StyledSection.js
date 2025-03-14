@@ -3,6 +3,7 @@ import Section1 from './Section1';
 import Section2 from './Section2';
 import Section3 from './Section3';
 import Section4 from './Section4';
+import Timeline from './Timeline';
 
 const StyledSection = () => {
   return (
@@ -10,7 +11,7 @@ const StyledSection = () => {
       <div className="container mx-auto px-6 max-w-5xl">
         {/* Section Title */}
         <h2 className="text-4xl font-bold text-center text-white mb-4 animate-fadeIn">
-            Welcome to my <span className='bg-gradient-to-br from-sky-500 to-sky-200 text-transparent bg-clip-text'>Website </span>
+            Welcome to my <span className='bg-gradient-to-r from-sky-500 to-white text-transparent bg-clip-text animate-text'>Website </span>
         </h2>
 
         {/* Section Subtitle */}
