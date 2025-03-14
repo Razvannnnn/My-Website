@@ -45,7 +45,7 @@ const Section4 = () => {
           </div>
           <div className="col-span-2">
             <h1 className="text-gray-400 font-thin text-center pb-2 text-2xl md:text-3xl">
-              Contact Me
+              <span className="bg-gradient-to-r from-stone-400 to-white text-transparent bg-clip-text animate-text">Contact Me</span>
             </h1>
             <form ref={form} onSubmit={sendEmail} className="flex flex-col items-center">
               <div className="w-full md:w-3/4 lg:w-2/3 xl:w-full">

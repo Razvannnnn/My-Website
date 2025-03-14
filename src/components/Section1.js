@@ -46,8 +46,8 @@ const Section1 = () => {
           </div>
           {/* Description Below */}
           <div>
-          <p className="text-2xl text-gray-400 dark:text-gray-300 leading-relaxed mb-4 px-3">
-            Blending my skills in <span className="text-white font-bold">coding</span> and <span className="text-white font-bold">design</span> to build <span className="text-white font-bold">creative, 
+          <p className="text-2xl bg-gradient-to-r from-stone-400 to-white text-transparent bg-clip-text animate-text leading-relaxed mb-4 px-3">
+            Blending my skills in <span className="text-white font-semibold ">coding</span> and <span className="text-white font-semibold">design</span> to build <span className="text-white font-semibold">creative, 
                 impactful, and future-ready</span> solutions.
           </p>
         </div>

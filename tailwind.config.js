@@ -81,10 +81,17 @@ module.exports = {
       'inner-xl': 'inset 20px 20px 20px 20px rgba(0, 0, 0, 0.16)',
     },
   },
-  plugins: [
-    require("flyonui"),
-    require("flyonui/plugin")
-  ],
-  darkMode: 'class'
+  
+  flyonui: {
+    themes: [
+      {
+        light: {
+          ...require("flyonui/src/theming/themes")['light'],
+          primary: 'black',
+          secondary: 'teal'
+        }
+      }
+    ]
+  }
 }
 
