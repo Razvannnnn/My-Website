@@ -20,4 +20,4 @@ Welcome to my personal website! This site serves as a portfolio and an introduct
 - **Tailwind CSS** – A utility-first CSS framework for creating highly customizable and responsive designs with minimal effort.  
 
 ## 📌 Live Demo
-[🔗 https://www.razvan-mindrila.online/](#) 
+🔗 https://www.razvan-mindrila.online
