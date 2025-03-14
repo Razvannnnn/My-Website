@@ -43,7 +43,7 @@ const StyledSection = () => {
             </div>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-slideIn2 pb-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-slideIn2 pb-32'>
             <div className='gradient-border rounded-3xl bg-stone-950 shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-3'>
                 <div className="bg-gradient-to-b from-stone-950 to-black rounded-3xl">  
                     <Section4></Section4>

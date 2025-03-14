@@ -1,9 +1,16 @@
 import React from 'react';
 import MyImage from '../images/IMG_1903.png'
 
+const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId);
+  if(section) {
+    section.scrollIntoView({behavior: 'smooth'})
+  }
+}
+
 const Section1 = () => {
   return (
-    <section className="min-h-64 flex items-center justify-center dark:from-gray-900 dark:to-gray-800">
+    <section id='section1' className="min-h-64 flex items-center justify-center dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-2xl py-4 w-full">
         {/* Flex Container for Name, Title, and Button */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 px-3">
@@ -22,8 +29,8 @@ const Section1 = () => {
               </h2>
             </div>
           </div>
-            <a className='pr-6'>
-                <button className="hover:scale-110 inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-sky-500 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-transform duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-50">
+            <a className='p-4'>
+                <button onClick={() => scrollToSection('section4')} className="hover:scale-110 inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-sky-500 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-transform duration-300 ease-in-out">
                 Contact me
                 </button>
               </a>
