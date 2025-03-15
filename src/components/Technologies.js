@@ -10,24 +10,26 @@ const technologies = [
   'Git',
   'C++',
   'C#',
-  'SQL'
+  'SQL',
 ];
 
 const Technologies = () => {
   const containerRef = useRef(null);
 
   // Function to check if two bubbles are overlapping
-  const checkCollision = (bubble1, bubble2) => {
+  const checkCollision = (bubble1, bubble2, threshold = 10) => {
     const rect1 = bubble1.getBoundingClientRect();
     const rect2 = bubble2.getBoundingClientRect();
-
+  
+    // Add threshold to the collision detection
     return !(
-      rect1.right < rect2.left ||
-      rect1.left > rect2.right ||
-      rect1.bottom < rect2.top ||
-      rect1.top > rect2.bottom
+      rect1.right + threshold < rect2.left - threshold ||
+      rect1.left - threshold > rect2.right + threshold ||
+      rect1.bottom + threshold < rect2.top - threshold ||
+      rect1.top - threshold > rect2.bottom + threshold
     );
   };
+  
 
   // Function to generate random animation values
   const generateRandomAnimation = () => {
@@ -117,7 +119,7 @@ const Technologies = () => {
           {technologies.map((tech, index) => (
             <div
               key={index}
-              className="absolute text-white text-sm sm:text-base md:text-lg bg-stone-800 bg-opacity-50 rounded-full px-4 py-2 shadow-lg"
+              className="absolute text-white text-sm sm:text-base md:text-lg bg-stone-900 rounded-full px-4 py-2 shadow-lg"
             >
               {tech}
             </div>
