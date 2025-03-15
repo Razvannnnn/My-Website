@@ -100,7 +100,7 @@ const Section4 = () => {
               alt="MyImage"
               className="w-full max-w-xs md:max-w-full md:hidden"
             />
-            <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black to-transparent md:hidden"></div>
+            <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
           </div>
         </div>
       </div>
