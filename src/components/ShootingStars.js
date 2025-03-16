@@ -1,33 +1,43 @@
 import React from 'react';
 
+// Define fixed positions for each star (reduced to 15 stars for better performance)
+const stars = [
+  { top: '10%', left: '5%' },
+  { top: '15%', left: '20%' },
+  { top: '20%', left: '5%' },
+  { top: '25%', left: '50%' },
+  { top: '30%', left: '65%' },
+  { top: '35%', left: '80%' },
+  { top: '40%', left: '95%' },
+  { top: '45%', left: '80%' },
+  { top: '50%', left: '25%' },
+  { top: '55%', left: '0%' },
+  { top: '60%', left: '15%' },
+  { top: '65%', left: '70%' },
+  { top: '70%', left: '100%' },
+  { top: '75%', left: '5%' },
+  { top: '80%', left: '15%' },
+];
+
 const ShootingStars = () => {
-  // Generate random positions, sizes, delays, and directions for each star
-  const generateRandomStyle = () => {
-    const top = `${Math.random() * 150}%`; // Random top position
-    const left = `${Math.random() * 50}%`; // Random left position
-    const delay = `${Math.random() * 3000}ms`; // Random animation delay
-    const size = `${Math.random() * 2 + 1}px`; // Random size (1px to 3px)
-    const angle = Math.random() * 360; // Random direction (0deg to 360deg)
-
-    return {
-      top,
-      left,
-      animationDelay: delay,
-      height: size,
-      width: size,
-      transform: `rotate(${angle}deg)`, // Random direction
-    };
-  };
-
   return (
-    <div className="night animate-fadeInStars">
-      {Array.from({ length: 30 }).map((_, i) => (
-        <div
-          key={i}
-          className="shooting_star"
-          style={generateRandomStyle()} // Apply random styles
-        ></div>
-      ))}
+    <div className="night">
+      {stars.map((star, i) => {
+        // Generate a random delay for each star
+        const delay = `${Math.random() * 3000}ms`; // Random delay between 0ms and 3000ms
+
+        return (
+          <div
+            key={i}
+            className="shooting_star animate-fadeIn"
+            style={{
+              top: star.top,
+              left: star.left,
+              animationDelay: delay, // Apply random delay
+            }}
+          ></div>
+        );
+      })}
     </div>
   );
 };

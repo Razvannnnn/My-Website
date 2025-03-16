@@ -35,11 +35,11 @@ const Section4 = () => {
     <section id="section4" className="transition-transform duration-1000">
       <div className="p-4 md:p-8">
         <div className="grid grid-cols-1 md:grid-cols-3 items-center">
-          <div className="col-span-1 flex justify-center md:justify-start relative">
+          <div className="col-span-1 flex justify-center md:justify-start relative overflow-hidden group rounded-3xl pl-5">
             <img
               src={MyImage}
               alt="MyImage"
-              className="w-full max-w-xs md:max-w-full hidden md:block"
+              className="w-full max-w-xs md:max-w-full hidden md:block object-cover animate-fadeIn transition-transform duration-500 ease-in-out transform group-hover:scale-105"
             />
             <div className="absolute bottom-0 left-0 lg:w-72 md:w-64 w-32 h-16 pr-6 bg-gradient-to-t from-black to-transparent hidden md:block"></div>
           </div>
@@ -94,11 +94,11 @@ const Section4 = () => {
               </button>
             </form>
           </div>
-          <div className="col-span-1 flex justify-center md:justify-start relative">
+          <div className="col-span-1 flex justify-center md:justify-start relative overflow-hidden group rounded-3xl">
             <img
               src={MyImage} 
               alt="MyImage"
-              className="w-full max-w-xs md:max-w-full md:hidden"
+              className="w-full max-w-xs md:max-w-full md:hidden object-cover animate-fadeIn transition-transform duration-500 ease-in-out transform group-hover:scale-105"
             />
             <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
           </div>

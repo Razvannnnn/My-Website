@@ -3,6 +3,9 @@ import Section1 from './Section1';
 import Section2 from './Section2';
 import Section3 from './Section3';
 import Section4 from './Section4';
+import Section5 from './Section5';
+import Section6 from './Section6';
+import Section7 from './Section7';
 
 const StyledSection = () => {
   return (
@@ -39,6 +42,24 @@ const StyledSection = () => {
             <div className='gradient-border rounded-3xl bg-stone-950 shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-3'>
                 <div className="rounded-3xl bg-gradient-to-b from-stone-950 to-black ">  
                     <Section3></Section3>
+                </div>
+            </div>
+        </div>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-8 mx-h-64 animate-slideIn2'>
+            <div className='gradient-border rounded-3xl bg-stone-950 shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-1 animate-fadeIn'>
+                <div className="bg-gradient-to-b from-stone-950 to-black rounded-3xl">  
+                    <Section5></Section5>
+                </div>
+            </div>
+            <div className='gradient-border rounded-3xl bg-stone-950 shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-1 animate-fadeIn'>
+                <div className="bg-gradient-to-b from-stone-950 to-black rounded-3xl">  
+                    <Section6></Section6>
+                </div>
+            </div>
+            <div className='gradient-border rounded-3xl bg-stone-950 shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-1 animate-fadeIn'>
+                <div className="bg-gradient-to-b from-stone-950 to-black rounded-3xl">  
+                    <Section7></Section7>
                 </div>
             </div>
         </div>

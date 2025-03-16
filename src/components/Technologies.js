@@ -1,35 +1,29 @@
 import React, { useRef, useEffect } from 'react';
 
 const technologies = [
-  'React',
-  'Tailwind CSS',
-  'JavaScript',
-  'Python',
-  'HTML',
-  'CSS',
-  'Git',
-  'C++',
-  'C#',
-  'SQL',
+  { name: 'React', x: '10%', y: '10%' },
+  { name: 'Tailwind CSS', x: '30%', y: '5%' },
+  { name: 'JavaScript', x: '70%', y: '80%' },
+  { name: 'Python', x: '70%', y: '20%' },
+  { name: 'HTML', x: '20%', y: '40%' },
+  { name: 'CSS', x: '40%', y: '50%' },
+  { name: 'Git', x: '60%', y: '40%' },
+  { name: 'C++', x: '80%', y: '50%' },
+  { name: 'C#', x: '10%', y: '70%' },
+  { name: 'SQL', x: '30%', y: '80%' },
 ];
 
 const Technologies = () => {
   const containerRef = useRef(null);
 
-  // Function to check if two bubbles are overlapping
-  const checkCollision = (bubble1, bubble2, threshold = 10) => {
-    const rect1 = bubble1.getBoundingClientRect();
-    const rect2 = bubble2.getBoundingClientRect();
-  
-    // Add threshold to the collision detection
-    return !(
-      rect1.right + threshold < rect2.left - threshold ||
-      rect1.left - threshold > rect2.right + threshold ||
-      rect1.bottom + threshold < rect2.top - threshold ||
-      rect1.top - threshold > rect2.bottom + threshold
-    );
-  };
-  
+  useEffect(() => {
+    const bubbles = Array.from(containerRef.current?.children || []);
+    bubbles.forEach((bubble, index) => {
+      setTimeout(() => {
+        bubble.classList.add('pop-up');
+      }, index * 300);
+    });
+  }, []);
 
   // Function to generate random animation values
   const generateRandomAnimation = () => {
@@ -66,28 +60,13 @@ const Technologies = () => {
     };
   };
 
-  // Function to position bubbles without overlapping
+  // Function to position bubbles at fixed positions
   const positionBubbles = () => {
     const bubbles = Array.from(containerRef.current.children);
     bubbles.forEach((bubble, index) => {
-      let collision;
-      let attempts = 0;
-      do {
-        collision = false;
-        bubble.style.left = `${Math.random() * 80}%`;
-        bubble.style.top = `${Math.random() * 80}%`;
-
-        // Check for collisions with other bubbles
-        for (let i = 0; i < index; i++) {
-          if (checkCollision(bubble, bubbles[i])) {
-            collision = true;
-            break;
-          }
-        }
-
-        attempts++;
-        if (attempts > 100) break; // Prevent infinite loops
-      } while (collision);
+      const tech = technologies[index];
+      bubble.style.left = tech.x;
+      bubble.style.top = tech.y;
 
       // Apply random animation
       const animation = generateRandomAnimation();
@@ -120,8 +99,9 @@ const Technologies = () => {
             <div
               key={index}
               className="absolute text-white text-sm sm:text-base md:text-lg bg-stone-900 rounded-full px-4 py-2 shadow-lg"
+              style={{ left: tech.x, top: tech.y }}
             >
-              {tech}
+              {tech.name}
             </div>
           ))}
         </div>

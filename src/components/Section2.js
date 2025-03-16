@@ -11,9 +11,9 @@ const Section2 = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-2xl w-full">
-        <img src={MyImage} alt='MyImage' className='min-h-64 w-full object-cover animate-fadeIn rounded-t-3xl' />
-        <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
+      <div className="relative z-10 max-w-2xl w-full group overflow-hidden rounded-3xl">
+        <img src={MyImage} alt='MyImage' className='min-h-64 w-full object-cover transition-transform duration-500 ease-in-out transform group-hover:scale-105' />
+        <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black to-transparent"></div>
       </div>
     </section>
   );
