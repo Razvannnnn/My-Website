@@ -2,15 +2,15 @@ import React, { useRef, useEffect } from 'react';
 
 const technologies = [
   { name: 'React', x: '10%', y: '10%' },
-  { name: 'Tailwind CSS', x: '30%', y: '5%' },
-  { name: 'JavaScript', x: '70%', y: '80%' },
-  { name: 'Python', x: '70%', y: '20%' },
-  { name: 'HTML', x: '20%', y: '40%' },
+  { name: 'Tailwind CSS', x: '40%', y: '0%' },
+  { name: 'JavaScript', x: '60%', y: '80%' },
+  { name: 'Python', x: '72%', y: '18%' },
+  { name: 'HTML', x: '13%', y: '40%' },
   { name: 'CSS', x: '40%', y: '50%' },
   { name: 'Git', x: '60%', y: '40%' },
   { name: 'C++', x: '80%', y: '50%' },
   { name: 'C#', x: '10%', y: '70%' },
-  { name: 'SQL', x: '30%', y: '80%' },
+  { name: 'SQL', x: '30%', y: '88%' },
 ];
 
 const Technologies = () => {

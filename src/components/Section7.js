@@ -13,7 +13,7 @@ const Section7 = () => {
           </div>
           <div>
             <h1 className="text-stone-400 text-center p-3 text-lg md:text-xl">
-                <span className="text-white italic">Computer science student</span> with <span className="text-white italic">7+ projects</span> on <span className="text-white italic">Github</span>. Passionate about <span className="text-white italic">coding, problem solving</span> and <span className="text-white italic">building efficient software</span>.
+                <span className="text-white italic">Computer science student</span> with <span className="text-white italic">6+ projects</span> on <span className="text-white italic">Github</span>. Passionate about <span className="text-white italic">coding, problem solving</span> and <span className="text-white italic">building efficient software</span>.
             </h1>
           </div>
         </div>

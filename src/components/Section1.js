@@ -22,9 +22,9 @@ const Section1 = () => {
     <section id='section1' className="min-h-72 flex items-center justify-center dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-2xl py-4 w-full">
         {/* Flex Container for Name, Title, and Button */}
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8 px-3">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-4 md:mb-8 px-3">
           {/* Name and Title Stacked Vertically */}
-          <div className="flex items-center space-x-1 mb-4 md:mb-0">
+          <div className="flex items-center space-x-1 mb-2 md:mb-0">
             <a>
               <div className="relative z-10 max-w-2xl w-full group overflow-hidden rounded-3xl">
               <img src={MyImage} alt='MyImage' className='h-20 w-20 object-cover animate-fadeIn transition-transform duration-500 ease-in-out transform group-hover:scale-105'></img>
@@ -35,7 +35,7 @@ const Section1 = () => {
               <h1 className="relative w-[max-content] font-mono font-bold text-2xl md:text-3xl text-white before:absolute before:inset-0 before:animate-typewriter before:bg-stone-950 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-white">
                 Hi, I’m Răzvan
               </h1>
-              <h2 className="text-lg md:text-xl text-gray-400">
+              <h2 className="text-sm md:text-xl text-gray-400">
                 Computer Science Student @ UBB
               </h2>
             </div>
