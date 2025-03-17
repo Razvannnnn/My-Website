@@ -3,7 +3,7 @@ import { ReactComponent as Icon } from '../images/coding.svg';
 
 const Section7 = () => {
     return (
-      <section id='section5' className="min-h-80 relative flex justify-center">
+      <section id='section7' className="min-h-80 relative flex justify-center">
         <div className='flex flex-col items-center'>  
           <div className="flex justify-center pt-4 pb-2">
             <Icon className="w-16 h-16"/>  

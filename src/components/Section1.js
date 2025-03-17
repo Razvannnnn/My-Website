@@ -1,5 +1,6 @@
 import React from 'react';
 import MyImage from '../images/IMG_1903.png'
+import { motion } from "framer-motion";
 import { section } from 'framer-motion/client';
 
 const scrollToSection = (sectionId) => {
