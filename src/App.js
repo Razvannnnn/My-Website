@@ -11,6 +11,7 @@ function App() {
 
   return (
     <div className="App min-h-screen flex flex-col">
+      <div className="background-svg min-h-screen bg-[#0d0d0d]"></div>
       <Background></Background>
       <StyledSection className="flex-grow"></StyledSection>
       <Footer></Footer>
