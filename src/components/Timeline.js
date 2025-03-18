@@ -1,53 +1,86 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const timelineData = [
-  { date: "2021", title: "Project Alpha", description: "Developed an innovative AI solution." },
-  { date: "2022", title: "Startup Beta", description: "Launched a SaaS platform." },
-  { date: "2023", title: "Company Gamma", description: "Led a major software overhaul." }
+  { date: "2019-2023", title: "High school", description: "\"Roman-Vodă\" National College, Roman, Neamț County\nProfile - Intensive Mathematics and Computer Science" },
+  { date: "2023-2026", title: "University", description: "Faculty of Mathematics and Informatics - UBB, Cluj-Napoca\nYear of Study – Second Year\nSpecialization – Computer Science" },
 ];
 
 const Timeline = () => {
-  const [scrollY, setScrollY] = useState(0);
+  const lineRef = useRef(null);
+  const [lineHeight, setLineHeight] = useState(0);
+  const [visibleItems, setVisibleItems] = useState([]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
+    const updateLineHeight = () => {
+      if (lineRef.current) {
+        const lastItem = lineRef.current.lastElementChild;
+        if (lastItem) {
+          const lineStart = lineRef.current.getBoundingClientRect().top;
+          const lineEnd = lastItem.getBoundingClientRect().bottom;
+          setLineHeight(lineEnd - lineStart);
+        }
+      }
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    updateLineHeight();
+    window.addEventListener("resize", updateLineHeight);
+    return () => window.removeEventListener("resize", updateLineHeight);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setVisibleItems(prev => [...prev, entry.target.dataset.index]);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const items = document.querySelectorAll('.timeline-item');
+    items.forEach(item => observer.observe(item));
+
+    return () => {
+      items.forEach(item => observer.unobserve(item));
+    };
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center p-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div className="grid-cols-1 items-center">
-          <div className="w-1 bg-white absolute transform top-0 bottom-0 justify-center"></div>
-          {timelineData.map((item, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.3 }}
-              className="flex items-center w-full max-w-2xl my-6 relative"
-            >
-              <div className="w-1/2 text-right pr-4">
-                <p className="text-lg font-semibold text-gray-700">{item.date}</p>
-              </div>
-              <div className="w-1/12 flex justify-center">
-                <motion.div
-                  className="w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow-md"
-                  animate={{ scale: scrollY > index * 200 ? 1.2 : 1 }}
-                  transition={{ duration: 0.3 }}
-                ></motion.div>
-              </div>
-              <div className="w-1/2 pl-4">
-                <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+    <section className="flex flex-col items-center w-full pt-8">
+      <div className="relative w-3/4" ref={lineRef}>
+        {/* Dynamic Vertical Line */}
+        <motion.div
+          className="absolute left-[102px] top-0 w-1 bg-white"
+          style={{ height: `${lineHeight}px` }}
+          initial={{ height: 0 }}
+          animate={{ height: `${lineHeight}px` }}
+          transition={{ duration: 1 }}
+        ></motion.div>
+        
+        {timelineData.map((item, index) => (
+          <motion.div 
+            key={index} 
+            data-index={index}
+            className="timeline-item flex items-center mb-8"
+            initial={{ opacity: 0, x: -20 }} 
+            animate={visibleItems.includes(index.toString()) ? { opacity: 1, x: 0 } : {}} 
+            transition={{ duration: 0.5, delay: index * 0.3 }}
+          >
+            {/* Date */}
+            <div className="w-24 text-right pr-4 text-gray-300 font-semibold">{item.date}</div>
+            
+            {/* Dot */}
+            <div className="relative">
+              <div className="w-4 h-4 bg-sky-500 rounded-full relative z-10"></div>
+            </div>
+            
+            {/* Content */}
+            <div className="ml-6 p- 4 bg-stone-800 shadow-lg rounded-lg w-2/3 ">
+              <h3 className="bg-gradient-to-r from-stone-400 to-white text-transparent bg-clip-text animate-text font-bold text-xl py-3">{item.title}</h3>
+              <p className="text-gray-200 pb-3" style={{ whiteSpace: "pre-line" }}>{item.description}</p>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
